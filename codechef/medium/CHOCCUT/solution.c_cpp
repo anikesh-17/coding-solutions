@@ -17,7 +17,7 @@ class Anikesh{
   private:
   bool possible(int len, int bre){
       int area = len * bre;
-      return area % 2 == 0
+      return area % 2 == 0;
   }
 };
 
