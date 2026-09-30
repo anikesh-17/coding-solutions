@@ -54,7 +54,7 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T14:57:05.933Z  
+**Submitted:** 2026-09-30T14:57:36.950Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -76,7 +76,7 @@ class Anikesh{
   private:
   bool possible(int len, int bre){
       int area = len * bre;
-      return area % 2 == 0
+      return area % 2 == 0;
   }
 };
 
