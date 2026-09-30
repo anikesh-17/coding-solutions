@@ -56,7 +56,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:11:56.967Z  
+**Submitted:** 2026-09-30T15:20:18.932Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -70,20 +70,40 @@ class Anikesh {
         while (t--) {
             int n,m,k;
             cin>>n>>m>>k;
-            
+            vector<int> ans = vacant(n,m,k);
+            for(auto it : ans){
+                cout << it << " ";
+            }
+            cout << endl;
         }
     }
     private:
     vector<int> vacant(int n, int m, int k){
-        vector<int> toOccupy(n,0);
-        
+        vector<bool> toOccupy(n,false);
+        vector<int> ans;
+        for(int i = 1; i<=n; i++){
+            if(i == m){
+                toOccupy[i] = true;
+            }
+        }
+        while(k > 0){
+            for(int i = 1; i<=n; i++){
+                if(toOccupy[i] == false){
+                    toOccupy[i] = true;
+                    ans.push_back(i);
+                    k--;
+                }
+            }
+        }
+        return ans;
     }
 };
 
 
 int main() {
     // your code goes here
-
+    Anikesh obj;
+    obj.testCase();
 }
 ```
 
