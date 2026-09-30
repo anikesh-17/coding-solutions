@@ -5,6 +5,8 @@ int main() {
 	// your code goes here
 	int a, b, c;
 	cin>>a>>b>>c;
-	cout << a/2 << endl;
+	int bread = a/2;
+	int middle = b+ c;
+	cout << min(bread, middle) << endl;
 
 }
