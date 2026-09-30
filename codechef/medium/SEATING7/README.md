@@ -56,30 +56,35 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:06:15.921Z  
+**Submitted:** 2026-09-30T15:11:22.905Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-class Anikesh{
-    public:
-    void testCase(){
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
+class Anikesh {
+    public: 
+    void testCase() {
+        int t;
+        cin >> t;
+        while (t--) {
+            int n,m,k;
+            cin>>n>>m>>k;
+            
+        }
     }
-}
+    private:
+    vector<int> vacant(int n, int m, int k){
+        vector<int> toOccupy(n,0);
+        
+    }
+};
+
 
 int main() {
-	// your code goes here
+    // your code goes here
 
 }
-
 ```
 
 ---
