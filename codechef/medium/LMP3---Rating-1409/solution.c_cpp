@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool has_odd(long long n) {
+    string s = to_string(n);
+    for (char c : s) {
+        int d = c - '0';
+        if (d % 2 == 1) return true;
+    }
+    return false;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        long long n;
+        cin >> n;
+
+        if (n % 2 == 1) {
+            cout << 0 << '\n';
+        }
+        else if (has_odd(n)) {
+            cout << 1 << '\n';
+        }
+        else {
+            int ans = (n >= 10 ? 3 : -1);
+            string s = to_string(n);
+            for (char c : s) {
+                int d = c - '0';
+                if (has_odd(n - d)) {
+                    ans = 2;
+                    break;
+                }
+            }
+            cout << ans << '\n';
+        }
+    }
+    return 0;
+}
