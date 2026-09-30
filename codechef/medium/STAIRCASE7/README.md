@@ -58,22 +58,45 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:33:49.935Z  
+**Submitted:** 2026-09-30T15:43:39.364Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+class Anikesh{
+    public:
+    void testCase(){
+    	int t;
+    	cin >> t;
+    	while(t--){
+    	    int n;
+    	    cin>>n;
+    	    vector<int> vec(n);
+    	    for(int i = 0; i<n; i++){
+    	        cin>>vec[i];
+    	    }
+    	    cout << replace(n, vec) << endl;
+    	}
+    }
+    private:
+    int replace(int n, vector<int> vec){
+        unordered_map<int, int> mpp;
+        int maxFreq = 0;
+        int i = 0;
+        while(i < n){
+            mpp[vec[i] - i]++;
+            maxFreq = max(mpp[vec[i] - i], maxFreq);
+            i++;
+        }
+        return abs(maxFreq - n);
+    }
+};
+
 int main() {
 	// your code goes here
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
-
+    Anikesh obj;
+    obj.testCase();
 }
 
 ```
