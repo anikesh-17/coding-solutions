@@ -7,8 +7,8 @@ class Anikesh{
       int t;
       cin>>t;
       while(t--){
-          int n;
-          cin>>n;
+          //int n;
+         // cin>>n;
           int len, bre;
           cin>>len >> bre;
           cout << (possible(len, bre) ? "Yes" : "No") << endl;
