@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    long long x, y;
+    cin >> x >> y;
+    long long ans = INT_MAX;
+    for(long long g = 1; g <= x; g++) {
+        long long profit = y*g*(g + 1)*(2*g + 1)/6 - g*x;
+        long long days = g;
+        while(profit <= 0) {
+            profit += y*g*g;
+            days++;
+        }
+        ans = min(ans, days);
+    }
+    cout << ans << endl;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--) {
+        solve();
+    }
+	return 0;
+}
