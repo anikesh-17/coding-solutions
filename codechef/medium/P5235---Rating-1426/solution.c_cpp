@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<int> A(N);
+        vector<int> freq(N + 1, 0);
+
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
+            if (A[i] <= N) freq[A[i]]++;
+        }
+
+        vector<int> ans(N + 1);
+
+        int missing = 0;
+
+        for (int k = 0; k <= N; k++) {
+            if (k > 0 && freq[k - 1] == 0) {
+                missing++;
+            }
+
+            if (k == 0) {
+                if (freq[0] == 0) ans[k] = 0;
+                else ans[k] = freq[0];
+            } else {
+                if (missing == 0) {
+                    ans[k] = freq[k];
+                } else {
+                    ans[k] = max(missing, freq[k]);
+                }
+            }
+        }
+
+        for (int k = 0; k <= N; k++) {
+            cout << ans[k] << " ";
+        }
+        cout << '\n';
+    }
+
+    return 0;
+}
