@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int T;
+	cin>> T;
+	
+	while(T--){
+	    int N;
+	    cin>> N;
+	    
+	    long long sum = 0;
+	    long long mn = LLONG_MAX;
+	    
+	    for(int i = 0 ; i<N ; i++){
+	        long long x;
+	        cin>>x;
+	        
+	        sum += x;
+	        mn = min(mn, x);
+	    }
+	    
+	    cout<< sum - mn << "\n";
+	}
+	
+	return 0;
+
+}
