@@ -62,22 +62,62 @@ abcdefghijklmnopqrstuvwxyz
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T14:54:27.647Z  
+**Submitted:** 2026-10-07T15:11:43.249Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+class Anikesh{
+ public:
+    Anikesh(){
+        output();
+    }
+private:
+    void output(){
+        int t;
+        cin>>t;
+        while(t--){
+            int s_len, l_len;
+            cin>>s_len >> l_len;
+            string s, l;
+            cin>>s>>l;
+            cout << freqDetermination(s_len, l_len, s, l) << endl;
+        }
+    }
+    int freqDetermination(int s_len, int l_len, string s, string l){
+        vector<int> freq(s_len,0); 
+        for(int i = 0; i<s_len; i++){
+            if(l.find(s[i]) != string::npos){
+                freq[i] = 1;
+            }
+            else{
+                freq[i] = 0;
+            }
+        }
+        int answer = longest(freq);
+        return answer;
+    }
+    int longest(vector<int> freq){
+        int n = freq.size();
+        int maxi = 0, cnt = 0;
+        for(int i = 0; i<n; i++){
+            if(freq[i] == 1){
+                cnt++;
+                maxi = max(maxi, cnt);
+            }
+            else{
+                cnt = 0;
+            }
+        }
+        return maxi;
+    }
+};
+
 int main() {
 	// your code goes here
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
-
+	Anikesh obj;
+    return 0;
 }
 
 ```
