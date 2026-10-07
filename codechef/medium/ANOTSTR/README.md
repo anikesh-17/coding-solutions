@@ -72,7 +72,7 @@ NO
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T15:37:02.571Z  
+**Submitted:** 2026-10-07T15:41:54.004Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -100,7 +100,7 @@ private:
         int sumA = std::count(a.begin(), a.end(), '1');
         int sumB = std::count(b.begin(), b.end(), '1');
         // int sumB = std::accumulate(b.begin(), b.end(), 0);
-        return sumA == sumB;
+        return (sumA % 2 == sumB % 2);
     }
 };
 
