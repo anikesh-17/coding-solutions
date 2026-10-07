@@ -33,16 +33,15 @@ private:
     }
     int longest(vector<int> freq){
         int n = freq.size();
-        int maxi = 1, cnt = 1;
-        for(int i = 1; i<n; i++){
-            if(freq[i] == freq[i-1]){
+        int maxi = 0, cnt = 0;
+        for(int i = 0; i<n; i++){
+            if(freq[i] == 1){
                 cnt++;
-                // maxi = max(maxi, cnt);
+                maxi = max(maxi, cnt);
             }
             else{
-                cnt = 1;
+                cnt = 0;
             }
-                maxi = max(maxi, cnt);
         }
         return maxi;
     }
