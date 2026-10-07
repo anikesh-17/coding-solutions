@@ -72,7 +72,7 @@ NO
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T15:30:48.319Z  
+**Submitted:** 2026-10-07T15:36:55.949Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -90,19 +90,16 @@ private:
         while(t--){
             int n;
             cin>>n;
-            vector<int> a(n), b(n);
-            for(int i = 0; i<n; i++){
-                cin >> a[i];
-            }
-            for(int i = 0; i<n; i++){
-                cin >> b[i];
-            }
+            string a, b;
+            cin>>a>>b;
             cout << (isPossible(a, b, n) ? "Yes" : "No") << endl;
         }
     }
-    bool isPossible(vector<int>& a, vector<int>& b, int n){
-        int sumA = std::accumulate(a.begin(), a.end(), 0);
-        int sumB = std::accumulate(b.begin(), b.end(), 0);
+    bool isPossible(string a, string b, int n){
+        // int sumA = std::accumulate(a.begin(), a.end(), 0);
+        int sumA = std::count(a.begin(), a.end(), '1');
+        int sumB = std::count(b.begin(), b.end(), '1');
+        // int sumB = std::accumulate(b.begin(), b.end(), 0);
         return sumA == sumB;
     }
 };
