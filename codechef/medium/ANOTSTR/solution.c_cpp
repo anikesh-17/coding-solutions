@@ -23,7 +23,7 @@ private:
         int sumA = std::count(a.begin(), a.end(), '1');
         int sumB = std::count(b.begin(), b.end(), '1');
         // int sumB = std::accumulate(b.begin(), b.end(), 0);
-        return sumA == sumB;
+        return (sumA % 2 == sumB % 2);
     }
 };
 
