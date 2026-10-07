@@ -62,7 +62,7 @@ abcdefghijklmnopqrstuvwxyz
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T15:11:43.249Z  
+**Submitted:** 2026-10-07T15:18:10.730Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -100,15 +100,16 @@ private:
     }
     int longest(vector<int> freq){
         int n = freq.size();
-        int maxi = 0, cnt = 0;
-        for(int i = 0; i<n; i++){
-            if(freq[i] == 1){
+        int maxi = 1, cnt = 1;
+        for(int i = 1; i<n; i++){
+            if(freq[i] == freq[i-1]){
                 cnt++;
-                maxi = max(maxi, cnt);
+                // maxi = max(maxi, cnt);
             }
             else{
-                cnt = 0;
+                cnt = 1;
             }
+                maxi = max(maxi, cnt);
         }
         return maxi;
     }
