@@ -67,7 +67,7 @@ The die has $4$ faces, numbered $3, 6, 9, 12$. Since $15$ is not one of these fa
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T14:47:20.248Z  
+**Submitted:** 2026-10-07T14:48:54.392Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -95,7 +95,7 @@ class Anikesh{
     //   }
     unordered_map<int,int> mpp;
     for(int i = 1; i<= x; i++){
-        mpp.insert({i*x, i});
+        mpp.insert({i*k, i});
     }
     if(mpp.find(y)!= mpp.end()) return true;
     return false;
