@@ -1,0 +1,111 @@
+# BOUQUET - Rating 1423
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+
+## Problem
+
+### The Largest Bouquet
+
+It's autumn now, the time of the leaf fall.
+
+Sergey likes to collect fallen leaves in autumn. In his city, he can find fallen leaves of maple, oak and poplar. These leaves can be of three different colors: green, yellow or red.
+
+Sergey has collected some leaves of each type and color. Now he wants to create the biggest  *nice*  bouquet from them. He considers the bouquet  *nice*  iff all the leaves in it are either from the same type of tree or of the same color (or both). Moreover, he doesn't want to create a bouquet with even number of leaves in it, since this kind of bouquets are considered to attract bad luck. However, if it's impossible to make any nice bouquet, he won't do anything, thus, obtaining a bouquet with zero leaves.
+
+Please help Sergey to find the maximal number of leaves he can have in a  *nice*  bouquet, which satisfies all the above mentioned requirements.
+
+Please note that Sergey  *doesn't have to*  use all the leaves of the same color or of the same type. For example, if he has  **20**  maple leaves, he can still create a bouquet of  **19**  leaves.
+
+### Input
+
+IThe first line of the input contains an integer  **T**  denoting the number of test cases. The description of  **T**  test cases follows."
+
+The first line of each test case contains three space-separated integers  **MG MY MR**  denoting the number of green, yellow and red maple leaves respectively.
+
+The second line contains three space-separated integers  **OG OY OR**  denoting the number of green, yellow and red oak leaves respectively.
+
+The third line of each test case contains three space-separated integers  **PG PY PR**  denoting the number of green, yellow and red poplar leaves respectively.
+
+### Output
+
+For each test case, output a single line containing the maximal amount of flowers in  *nice*  bouquet, satisfying all conditions or  **0**  if it's impossible to create any bouquet, satisfying the conditions.
+
+### Constraints
+
+- 1 ≤ T ≤ 10000
+- Subtask 1 (50 points): 0 ≤ MG, MY, MR, OG, OY, OR, PG, PY, PR ≤ 5
+- Subtask 2 (50 points): 0 ≤ MG, MY, MR, OG, OY, OR, PG, PY, PR ≤ 109
+
+ 
+
+### Sample 1:
+Input
+Output
+
+```
+1
+1 2 3
+3 2 1
+1 3 4
+```
+
+```
+7
+```
+
+### Explanation:
+
+ **Example case 1.**  We can create a bouquet with  **7**  leaves, for example, by collecting all yellow leaves. This is not the only way to create the nice bouquet with  **7**  leaves (for example, Sergey can use all but one red leaves), but it is impossible to create a nice bouquet with more than  **7**  leaves.
+
+## Solution
+
+**Language:** c_cpp  
+**Runtime:** N/A  
+**Memory:** N/A  
+**Submitted:** 2026-10-09T12:04:37.207Z  
+
+```c_cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        vector <vector <long long>> v(3, vector <long long> (3));
+        for (long long i = 0; i < 3; i++) {
+            for (long long j = 0; j < 3; j++) {
+                cin >> v[i][j];
+            }
+        }
+        long long maxi1 = 0, sum1 = 0;
+        for (long long i = 0; i < 3; i++) {
+            sum1 = 0;
+            for (long long j = 0; j < 3; j++) {
+                sum1 += v[i][j];
+            }
+            if (maxi1 < sum1) {
+                maxi1 = sum1;
+            }
+        }
+        long long maxi2 = 0, sum2 = 0;
+        for (long long i = 0; i < 3; i++) {
+            sum2 = 0;
+            for (long long j = 0; j < 3; j++) {
+                sum2 += v[j][i];
+            }
+            if (maxi2 < sum2) {
+                maxi2 = sum2;
+            }
+        }
+        long long val = max(maxi1, maxi2);
+        if (val == 0) cout << 0 << endl;
+        else if (val & 1) cout << val << endl;
+        else cout << val - 1 << endl;
+    }
+}
+```
+
+---
+
+[View on CodeChef](https://www.codechef.com/problems/BOUQUET)
