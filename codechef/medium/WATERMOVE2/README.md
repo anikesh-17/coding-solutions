@@ -58,7 +58,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T15:19:50.589Z  
+**Submitted:** 2026-10-14T15:19:00.563Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -84,7 +84,6 @@ private:
         }
     }
     int maxWaterContain(vector<int> vec, int n, int k){
-        sort(vec.begin(), vec.end());
         int totalWater = vec[n-1];
         // if(n > k){
         //     totalWater = accumulate(vec.begin(), vec.end(), 0);
