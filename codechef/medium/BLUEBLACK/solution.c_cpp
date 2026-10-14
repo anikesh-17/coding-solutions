@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int a, b;
+	cin>>a>>b;
+	// a = blue     b = black
+	int blueCOst = a * 3;
+	int blackAndBlueCost = a + b;
+	
+	cout << min(blueCOst, blackAndBlueCost) << endl;
+
+}
