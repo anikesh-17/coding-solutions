@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int m, x, y;
+    cin >> m >> x >> y;
+    vector<int> a(m);
+    for(int i = 0; i < m; i++) {
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+    int ans = 0, last = 1;
+    for(int i = 0; i < m; i++) {
+        ans += max(0, a[i] - last - x*y);
+        last = a[i] + x*y + 1;
+    }
+    // cout << ans << endl;
+    ans += max(0, 101 - last);
+    cout << ans << endl;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--) {
+        solve();
+    }
+	return 0;
+}
