@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+/* auth : sayan_shaw */
+ll fac[1000003];
+void init(ll fac[]) {
+    fac[1] = 1;
+    for(ll i = 2; i < 1000003; i++) {
+        fac[i] = (i * fac[i - 1]) % 1000000007;
+    }
+}
+int main(void) {
+    init(fac);
+	ll  test_case;
+	cin >> test_case;
+	while(test_case--) {
+        ll n, a, ans = 0;
+        cin >> n;
+        for(ll i = 0; i < n; i++) {
+            cin >> a;
+            ans = (ans + fac[a]) % 1000000007;
+        }
+        cout << ans << endl;
+	}
+    return 0;
+}
