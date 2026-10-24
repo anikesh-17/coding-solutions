@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    cin >> n;
+
+    // init minCount with largeValue
+    vector<int> minCnt(26,1e9);
+
+    for(int i=0; i<n;i++) {
+        string s;
+        cin >> s;
+
+        vector<int> cnt(26, 0);
+        for (char c: s) {
+            cnt[c-'a'] += 1;
+
+        }
+
+        for (int i=0;i<26;i++) {
+            minCnt[i] = min(minCnt[i], cnt[i]);
+        }
+
+
+    }
+
+    // create result
+    string result = "";
+    for (int j = 0; j < 26; j++) {
+        for (int k = 0; k < minCnt[j]; k++) {
+            result += char('a' + j);
+        }
+    }
+
+    if (result.empty()) {
+        cout << "no such string" << endl;
+    } else {
+        cout << result << endl;
+    }
+
+    return 0;
+}
