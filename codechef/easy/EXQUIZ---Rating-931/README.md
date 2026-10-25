@@ -57,52 +57,49 @@ Test case $4$: Since the final score is $0$, all questions can be skipped.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-25T12:17:45.458Z  
+**Submitted:** 2026-10-25T12:17:46.609Z  
 
 ```c_cpp
 #include<bits/stdc++.h>
-
-
 using namespace std;
 using ll = long long;
-using vi = vector<int>;
-using vll = vector<ll>;
-using pii = pair<int, int>;
+using vi = vector < int > ;
+using vll = vector < ll > ;
+using pii = pair < int, int > ;
 
 #define pb push_back
-#define all(x) (x).begin(), (x).end()
-#define sz(x) (int)(x).size()
+#define all(x)(x).begin(), (x).end()
+#define sz(x)(int)(x).size()
 #define endl '\n'
 
 void fahhh() {
-int n,s;
-cin>>n>>s;
-if(s%4 == 0 && s/4<=n)
-cout<<s/4<<endl;
-else if(s%4 == 1 && (s+15)/4<=n)
-cout<<(s+15)/4<<endl;
-else if(s%4 == 2 && (s+10)/4<=n)
-cout<<(s+10)/4<<endl;
-else if(s%4 == 3 && (s+5)/4<=n)
-cout<<(s+5)/4<<endl;
-else
-cout<<-1<<endl;
-    
+    int n, s;
+    cin >> n >> s;
+    if (s % 4 == 0 && s / 4 <= n)
+        cout << s / 4 << endl;
+    else if (s % 4 == 1 && (s + 15) / 4 <= n)
+        cout << (s + 15) / 4 << endl;
+    else if (s % 4 == 2 && (s + 10) / 4 <= n)
+        cout << (s + 10) / 4 << endl;
+    else if (s % 4 == 3 && (s + 5) / 4 <= n)
+        cout << (s + 5) / 4 << endl;
+    else
+        cout << -1 << endl;
+
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int t = 1;
-   cin >> t;
+    cin >> t;
     while (t--) {
         fahhh();
     }
-    
+
     return 0;
 }
-
 ```
 
 ---
