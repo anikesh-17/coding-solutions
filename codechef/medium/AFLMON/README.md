@@ -53,7 +53,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T14:41:21.317Z  
+**Submitted:** 2026-11-02T15:04:52.287Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -79,16 +79,8 @@ class Anikesh{
       }
   }
   int chk(vector<int> vec, int n){
-    //   sort(vec.begin(), vec.end());
-    //   for(int i = n-1; i>=0; i--){
-             
-    //   }
-    int maxi = *std::max_element(vec.begin(), vec.end());
-    int cnt = 0;
-    for (int i = 0; i < n; i++) {
-        if(vec[i] == maxi) cnt++;
-    }
-    return cnt;
+    
+    
   }
 };
 
