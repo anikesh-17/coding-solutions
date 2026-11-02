@@ -50,24 +50,51 @@ Output
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T14:38:58.451Z  
+**Submitted:** 2026-11-02T14:40:38.352Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+class Anikesh{
+  public:
+  Anikesh(){
+      output();
+  }
+  private:
+  void output(){
+      int t;
+      cin>>t;
+      while(t--){
+          int n;
+          cin>>n;
+          vector<int> vec;
+          for (int i = 0; i < n; i++) {
+              cin>>vec[i];
+          }
+          cout << chk(vec, n) << endl;
+      }
+  }
+  int chk(vector<int> vec, int n){
+    //   sort(vec.begin(), vec.end());
+    //   for(int i = n-1; i>=0; i--){
+             
+    //   }
+    int maxi = *std::max_element(vec.begin(), vec.end());
+    int cnt = 0;
+    for (int i = 0; i < n; i++) {
+        if(vec[i] == maxi) cnt++;
+    }
+    return cnt;
+  }
+};
+
 int main() {
 	// your code goes here
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
+	Anikesh obj;
 
 }
 
