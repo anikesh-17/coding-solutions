@@ -53,7 +53,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T15:04:52.287Z  
+**Submitted:** 2026-11-02T15:07:21.029Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -79,8 +79,16 @@ class Anikesh{
       }
   }
   int chk(vector<int> vec, int n){
-    
-    
+    int bge = 0;
+    for (int i = 0; i < n; i++) {
+        int less = 0;
+        for(int j = 0; j<n; j++){
+            if(vec[j] <= vec[i]) less++;
+        }
+        int high = n - less;
+        if(less > high) bge++;
+    }
+    return bge;
   }
 };
 
