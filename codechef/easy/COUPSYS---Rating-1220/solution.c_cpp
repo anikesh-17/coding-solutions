@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+    int t, cs = 0;
+    int n;
+
+    cin>>t;
+    while (t--) {
+        int a = 0, b = 0, c = 0;
+        int u, v, w;
+        int cy, l, d;
+        cin>>n;
+        while (n--) {
+            cin>>cy>>l>>d;
+            if (l == 1) {
+                if (d > a) a = d, u = cy;
+                else if (d == a) u = min(u, cy);
+            }
+            if (l == 2) {
+                if (d > b) b = d, v = cy;
+                else if (d == b) v = min(v, cy);
+            }
+            if (l == 3) {
+                if (d > c) c = d, w = cy;
+                else if (d == c) w = min(w, cy);
+            }
+        }
+
+        cout<<a<<" "<<u<<endl;
+        cout<<b<<" "<<v<<endl;
+        cout<<c<<" "<<w<<endl;
+    }
+
+
+
+    return 0;
+}
