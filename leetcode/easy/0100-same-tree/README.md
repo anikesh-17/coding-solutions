@@ -45,8 +45,8 @@ Output: false
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 12.7 MB (beats 77.50%)  
-**Submitted:** 2026-10-01T13:04:37.339Z  
+**Memory:** 12.7 MB (beats 93.76%)  
+**Submitted:** 2026-11-05T13:57:40.157Z  
 
 ```cpp
 /**
@@ -57,14 +57,16 @@ Output: false
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
  * };
  */
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        if(p == nullptr || q == nullptr) return (p == q);
-        return (p->val == q->val) &&
+        if (p == NULL || q == NULL)
+            return p==q;
+        return (p->val == q->val) && 
                isSameTree(p->left, q->left) &&
                isSameTree(p->right, q->right);
     }
