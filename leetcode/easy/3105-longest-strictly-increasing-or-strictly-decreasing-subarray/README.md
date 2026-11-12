@@ -62,9 +62,9 @@ Hence, we return `3`.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 1 ms (beats 21.27%)  
-**Memory:** 27.8 MB (beats 48.88%)  
-**Submitted:** 2026-11-12T16:30:10.371Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 27.7 MB (beats 93.66%)  
+**Submitted:** 2026-11-12T16:30:58.812Z  
 
 ```cpp
 class Solution {
