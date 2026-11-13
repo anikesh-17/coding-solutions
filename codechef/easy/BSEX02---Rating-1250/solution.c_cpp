@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        long long n;
+        cin >> n;
+
+        long long layers = 0;
+
+        while (n >= layers + 1) {
+            layers++;
+            n -= layers;
+        }
+
+        cout << layers << '\n';
+    }
+
+    return 0;
+}
