@@ -1,0 +1,28 @@
+// struct TreeNode {
+//     int val;
+//     TreeNode *left, *right;
+//     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+// };
+
+class Solution {
+public:
+    pair<int, int> floorAndCeil(TreeNode* root, int key) {
+        // write your code here 
+        #define ll long long int
+        ll x = -1, y = 1e10;
+        auto dfs = [&](auto&& dfs, TreeNode* u) {
+            if (u == nullptr) return;
+            if (u->val >= key) {
+                y = min((ll)u->val, y);
+            }
+            if (u->val <= key) {
+                x = max(x, (ll)u->val);
+            }
+            dfs(dfs, u->left);
+            dfs(dfs, u->right);
+        };
+        dfs(dfs, root);
+        if (y == 1e10) y = -1;
+        return make_pair(x, y);
+    }
+};
