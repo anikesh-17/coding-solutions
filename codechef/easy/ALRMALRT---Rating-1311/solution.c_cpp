@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t_1;
+    cin >> t_1;
+
+    while (t_1--) {
+        long long x, y, d;
+        cin >> x >> y >> d;
+
+        long long alarm_1 = x;
+        long long alarm_2 = y;
+
+        while (true) {
+            long long diff = abs(alarm_1 - alarm_2);
+
+            if (diff <= d) {
+                cout << max(alarm_1, alarm_2) << '\n';
+                break;
+            }
+
+            if (alarm_1 < alarm_2) {
+                alarm_1 += x;
+            } else {
+                alarm_2 += y;
+            }
+        }
+    }
+
+    return 0;
+}
