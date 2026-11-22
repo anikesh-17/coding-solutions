@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+
+        string s;
+        cin >> s;
+
+        // Count contiguous blocks of identical characters
+        int minLength = 1;
+
+        for (int i = 1; i < n; i++) {
+            if (s[i] != s[i - 1]) {
+                minLength++;
+            }
+        }
+
+        if (k >= minLength && k <= n) {
+            cout << "YES" << endl;
+        } 
+        else {
+            cout << "NO" << endl;
+        }
+    }
+
+    return 0;
+}
