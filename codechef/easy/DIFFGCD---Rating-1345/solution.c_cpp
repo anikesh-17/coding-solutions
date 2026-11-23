@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+void solve() {
+    long long N;
+    cin >> N;
+    
+    long long ans = 0;
+    for (long long g = 1; g * 2 <= N; ) {
+        long long val = N / g;
+        long long max_g = N / val;
+        
+        // Ensure max_g doesn't exceed N / 2
+        max_g = min(max_g, N / 2);
+        
+        // Count of values of g in the current block
+        long long count = max_g - g + 1;
+        
+        ans += count * (val - 1);
+        
+        g = max_g + 1;
+    }
+    
+    cout << ans << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+    
+    return 0;
+}
