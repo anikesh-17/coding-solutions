@@ -60,22 +60,35 @@ YES
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T14:50:49.806Z  
+**Submitted:** 2026-11-25T14:57:10.167Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+class Anikesh{
+public:
+    Anikesh(){
+        output();
+    }
+private:
+    void output(){
+        int t;
+        cin>>t;
+        while(t--){
+            int n,k;
+            cin>>n>>k;
+            cout << (steps(n,k) ? "Yes" : "No") << endl;
+        }
+    }
+    bool steps(int n, int k){
+        return ((n >= k) && (n <= 2*k));
+    }
+};
+
 int main() {
 	// your code goes here
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
-
+	Anikesh obj;
 }
 
 ```
