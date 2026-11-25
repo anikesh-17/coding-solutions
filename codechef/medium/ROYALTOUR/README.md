@@ -64,7 +64,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T16:00:51.714Z  
+**Submitted:** 2026-11-25T16:02:35.700Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -87,8 +87,8 @@ private:
             ll n,m,row,col;
             cin>>n>>m;
             cin>>row>>col;
+            cout << min_moves(n,m,row,col) << endl;
         }
-        cout << min_moves(n,m,row,col) << endl;
     }
     int min_moves(ll n, ll m, ll row, ll col){
         vector<pair<ll, ll>> vertices = {
@@ -109,8 +109,8 @@ private:
                 total += distance(ar,aa,br,bc);
                 ar = br;
                 aa = bc;
-                answer = min(answer, total);
             }
+            answer = min(answer, total);
         }
         while(std::next_permutation(pos.begin(), pos.end()));
         return answer;
