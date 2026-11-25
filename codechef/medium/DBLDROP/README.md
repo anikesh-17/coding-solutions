@@ -66,21 +66,58 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:10:43.494Z  
+**Submitted:** 2026-11-25T15:28:10.654Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+
+class Anikesh{
+public:
+    Anikesh(){
+        output();
+    }
+private:
+    void output(){
+        int t;
+        cin>>t;
+        while(t--){
+            int n;
+            cin>>n;
+            vector<ll> vec(n);
+            for (int i = 0; i < n; i++) {
+                cin>>vec[i];
+            }
+            cout << drop(vec, n) << endl;
+        }
+    }
+    ll drop(vector<ll> vec, int n){
+        sort(vec.begin(), vec.end());
+        // int secLarg = vec[n-2];
+        // if(vec[n-1] == vec[n-2]){
+        //     secLarg = vec[n-3];
+        // }
+        // if(vec[n-2] != vec[n-1]){
+        //     vec[n-2] *= 2;
+        // }
+        // else{
+        //     vec[n-3] *= 2;
+        // }
+        ll sum = accumulate(vec.begin(), vec.end(), 0LL);
+        ll most = vec[n-1], secMost = vec[n-2];
+        ll s1 = sum - most;
+        ll nsm = sum + secMost;
+        ll nmst = max(2*secMost, most);
+        ll s2 = nsm - nmst;
+        return max(s2,s1);
+    }
+};
 
 int main() {
 	// your code goes here
-	int t;
-	cin >> t;
-	while(t--){
-	    int x,y;
-	    cin >> x >> y;
-	    cout << abs(x-y) << endl;
-	}
+	Anikesh obj;
+	return 0;
 
 }
 
