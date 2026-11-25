@@ -66,7 +66,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:31:17.488Z  
+**Submitted:** 2026-11-25T15:36:20.183Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -104,13 +104,20 @@ private:
         // else{
         //     vec[n-3] *= 2;
         // }
+        
         ll sum = accumulate(vec.begin(), vec.end(), 0LL);
-        ll most = vec[n-1], secMost = vec[n-2];
+        ll most = *max_element(vec.begin(), vec.end());
         ll s1 = sum - most;
-        ll nsm = sum + secMost;
-        ll nmst = max(2*secMost, most);
-        ll s2 = nsm - nmst;
-        return max(s2,s1);
+        ll s2 = 0;
+        ll nsm = 0;
+        ll nmst = 0;
+        for (int i = 0; i < n; i++) {
+            nsm = sum + vec[i];
+            nmst = max(most, 2*vec[i]);
+            s2 = nsm - nmst;
+            s1 = max(s1,s2);
+        }
+        return s1;
     }
 };
 
