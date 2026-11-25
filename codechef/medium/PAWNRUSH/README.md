@@ -61,7 +61,7 @@ The pawn first moves two rows, from row $2$ to row $4$, and then one row at a ti
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T14:47:51.307Z  
+**Submitted:** 2026-11-25T14:48:00.753Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
