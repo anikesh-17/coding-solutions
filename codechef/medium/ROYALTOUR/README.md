@@ -64,7 +64,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T16:07:54.912Z  
+**Submitted:** 2026-11-25T16:02:18.429Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -90,19 +90,14 @@ private:
             cout << min_moves(n,m,row,col) << endl;
         }
     }
-    ll min_moves(ll n, ll m, ll row, ll col){
+    int min_moves(ll n, ll m, ll row, ll col){
         vector<pair<ll, ll>> vertices = {
             {1,1},
             {1,m},
             {n,1},
             {n,m}
         };
-        sort(vertices.begin(), vertices.end());
-        vertices.erase(
-            unique(vertices.begin(), vertices.end()), vertices.end()  
-        );
-        vector<int> pos(vertices.size());
-        iota(pos.begin(), pos.end(), 0);
+        vector<int> pos = {0,1,2,3};
         ll answer = LLONG_MAX;
         do{
             ll total = 0;
