@@ -64,7 +64,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T16:02:18.429Z  
+**Submitted:** 2026-11-25T16:09:08.787Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -90,20 +90,25 @@ private:
             cout << min_moves(n,m,row,col) << endl;
         }
     }
-    int min_moves(ll n, ll m, ll row, ll col){
+    ll min_moves(ll n, ll m, ll row, ll col){
         vector<pair<ll, ll>> vertices = {
             {1,1},
             {1,m},
             {n,1},
             {n,m}
         };
-        vector<int> pos = {0,1,2,3};
+        sort(vertices.begin(), vertices.end());
+        vertices.erase(
+            unique(vertices.begin(), vertices.end()), vertices.end()  
+        );
+        vector<int> pos(vertices.size());
+        iota(pos.begin(), pos.end(), 0);
         ll answer = LLONG_MAX;
         do{
             ll total = 0;
             ll ar = row;
             ll aa = col;
-            for(int i = 0; i<4; i++){
+            for(int i = 0; i<pos.size(); i++){
                 ll br = vertices[pos[i]].first;
                 ll bc = vertices[pos[i]].second;
                 total += distance(ar,aa,br,bc);
