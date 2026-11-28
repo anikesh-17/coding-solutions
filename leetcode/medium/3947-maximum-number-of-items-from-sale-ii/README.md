@@ -62,9 +62,9 @@ C++
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-11-28T14:27:31.885Z  
+**Runtime:** 62 ms (beats 88.00%)  
+**Memory:** 320.4 MB (beats 29.00%)  
+**Submitted:** 2026-11-28T14:27:33.613Z  
 
 ```cpp
 class Solution {
